@@ -1,0 +1,25 @@
+.ScreenLogin{
+    -fx-background-color: #2A2E37;
+}
+.ButtonLogin{
+    -fx-background-color: transparent;
+     -fx-border-width: 50px 0px 0px 50px;
+}
+
+.ButtonLogin-Entrar:hover{
+   -fx-background-color: #9635f6;
+   -fx-border-width: 50px 0px 0px 50px;
+   -fx-cursor: hand;
+}
+.ButtonLogin-Sair:hover{
+   -fx-background-color: #ab003c;
+   -fx-border-width: 50px 0px 0px 50px;
+   -fx-cursor: hand;
+}
+
+.TextField{
+    -fx-text-fill: white;
+    -fx-font-size: 13pt;
+    -jfx-focus-color: #9635f6;
+    -fx-prompt-text-fill: #707477;
+}
