@@ -7,22 +7,24 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Login extends Application {
-    private Stage stage;
+    private static Stage stage;
 
-    public Stage getStage() {
+    public static Stage getStage() {
         return stage;
     }
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
+    public static void setStage(Stage stage) {
+        Login.stage = stage;
     }
+
+  
     
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/View/Login.fxml"));
         Scene scene = new Scene(root);
         stage.setResizable(false);
-        setStage(stage);
+        this.stage = stage;
         stage.setScene(scene);
         stage.show();
     }

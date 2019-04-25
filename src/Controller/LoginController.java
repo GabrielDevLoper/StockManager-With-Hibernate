@@ -1,9 +1,15 @@
 package Controller;
 
+import Main.Menu;
+import Main.Login;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 
 public class LoginController implements Initializable {
@@ -12,6 +18,22 @@ public class LoginController implements Initializable {
 
     @FXML
     private URL location;
+    
+    @FXML
+    void btnEntrar(MouseEvent event) {
+        Menu menu = new Menu();
+        try {
+            menu.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Login.getStage().close();
+    }
+
+    @FXML
+    void btnSair(MouseEvent event) {
+        Login.getStage().close();
+    }
    
     
     @Override

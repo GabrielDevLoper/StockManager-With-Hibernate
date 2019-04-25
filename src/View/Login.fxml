@@ -17,7 +17,7 @@
          <children>
             <JFXTextField layoutX="227.0" layoutY="171.0" prefHeight="50.0" prefWidth="250.0" promptText="Usuario" styleClass="TextField" />
             <JFXPasswordField layoutX="227.0" layoutY="221.0" prefHeight="50.0" prefWidth="250.0" promptText="Senha" styleClass="TextField" />
-            <JFXButton layoutX="227.0" layoutY="305.0" prefHeight="50.0" prefWidth="100.0" styleClass="ButtonLogin-Entrar" text="Entrar" textFill="WHITE">
+            <JFXButton layoutX="227.0" layoutY="305.0" onMouseClicked="#btnEntrar" prefHeight="50.0" prefWidth="100.0" styleClass="ButtonLogin-Entrar" text="Entrar" textFill="WHITE">
                <font>
                   <Font name="QuicksandBold-Regular" size="20.0" />
                </font>
@@ -27,7 +27,7 @@
             </JFXButton>
             <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="206.0" layoutY="202.0" size="20" />
             <FontAwesomeIconView fill="WHITE" glyphName="LOCK" layoutX="207.0" layoutY="252.0" size="20" />
-            <JFXButton layoutX="377.0" layoutY="305.0" prefHeight="50.0" prefWidth="100.0" styleClass="ButtonLogin-Sair" text="Sair" textFill="WHITE">
+            <JFXButton layoutX="377.0" layoutY="305.0" onMouseClicked="#btnSair" prefHeight="50.0" prefWidth="100.0" styleClass="ButtonLogin-Sair" text="Sair" textFill="WHITE">
                <font>
                   <Font name="QuicksandBold-Regular" size="20.0" />
                </font>

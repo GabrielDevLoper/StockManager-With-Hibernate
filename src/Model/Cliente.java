@@ -1,6 +1,8 @@
 package Model;
 
+
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,17 +15,17 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-@SequenceGenerator(name="seq_clien", initialValue=1)// comando para criar uma sequencia propria para a tabela atual.
+@SequenceGenerator(name="cliente_seq", sequenceName = "cliente_seq" ,initialValue=1, allocationSize = 1)// comando para criar uma sequencia propria para a tabela atual.
 public class Cliente extends Model implements Serializable {
     
     @Id //Fazendo com que o banco de dados transforme o id em serial.
-    @GeneratedValue(strategy=GenerationType.IDENTITY)//GenerationType.IDENTITY esse identity faz com que o cada tabela tenha sua propria sequencia de pk;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "cliente_seq")//GenerationType.IDENTITY esse identity faz com que o cada tabela tenha sua propria sequencia de pk;
     private int id;
-    @Column(unique = true)//este comando impossibilita de cadastrar nomes iguais.
+    @Column(unique = true)//este comando impossibilita de cadastrar nomes iguais na coluna nome.
     private String nome;
     private String telefone;
     private String cpf;
-    @OneToOne
+    @OneToOne (cascade = CascadeType.ALL)
     private Endereco endereco;
 
     public Cliente() {
@@ -67,7 +69,7 @@ public class Cliente extends Model implements Serializable {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-
+    
     public Endereco getEndereco() {
         return endereco;
     }

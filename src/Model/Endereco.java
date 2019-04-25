@@ -1,40 +1,32 @@
 package Model;
 
+
 import java.io.Serializable;
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
-import static javax.persistence.FetchType.EAGER;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
 
 @Entity
 @Table
+@SequenceGenerator(name="endereco_seq", sequenceName = "endereco_seq" ,initialValue=1, allocationSize = 1)
+
 public class Endereco extends Model implements Serializable {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)//GenerationType.IDENTITY esse identity faz com que o cada tabela tenha sua propria sequencia de pk;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "endereco_seq")
     private int id;
     private String cidade;
     private String bairro;
     private String rua;
     private String numero;
     private String complemento;
-    @OneToOne //(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, fetch = EAGER)
+    @OneToOne
     private Cliente cliente;
-
-    public Endereco(String cidade, String bairro, String rua, String numero, String complemento, Cliente cliente) {
-        this.cidade = cidade;
-        this.bairro = bairro;
-        this.rua = rua;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.cliente = cliente;
-    }
-
-    
 
     public Cliente getCliente() {
         return cliente;
@@ -43,7 +35,24 @@ public class Endereco extends Model implements Serializable {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+    public Endereco(int id, String bairro, String rua, String numero, String complemento, Cliente cliente) {
+        this.id = id;
+        this.bairro = bairro;
+        this.rua = rua;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.cliente = cliente;
+    }
     
+    public Endereco(String cidade, String bairro, String rua, String numero, String complemento) {
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.rua = rua;
+        this.numero = numero;
+        this.complemento = complemento;
+    }
+
     public Endereco() {
     }
 
@@ -94,9 +103,7 @@ public class Endereco extends Model implements Serializable {
     public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
-    
-    
-    
+
     
     
 }
