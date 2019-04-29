@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="618.0" prefWidth="669.0" styleClass="ScreenLogin" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CadastroClientesController">
+   <children>
+      <Pane layoutX="20.0" layoutY="30.0" prefHeight="242.0" prefWidth="629.0" style="-fx-border-color: white;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="125.0" layoutY="21.0" prefHeight="200.0" prefWidth="382.0">
+               <children>
+                  <JFXTextField fx:id="txtNome" promptText="Nome" styleClass="TextField" />
+                  <JFXTextField fx:id="txtTelefone" promptText="Telefone" styleClass="TextField" />
+                  <JFXTextField fx:id="txtCpf" promptText="Cpf" styleClass="TextField" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="20.0" layoutY="302.0" prefHeight="242.0" prefWidth="629.0" style="-fx-border-color: white;" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="34.0" layoutY="21.0" prefHeight="200.0" prefWidth="240.0">
+               <children>
+                  <JFXTextField fx:id="txtCidade" promptText="Cidade" styleClass="TextField" />
+                  <JFXTextField fx:id="txtBairro" promptText="Bairro" styleClass="TextField" />
+                  <JFXTextField fx:id="txtRua" promptText="Rua" styleClass="TextField" />
+                  <JFXTextField fx:id="txtNumero" promptText="Numero da Casa" styleClass="TextField" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="315.0" layoutY="21.0" prefHeight="200.0" prefWidth="285.0">
+               <children>
+                  <JFXTextArea fx:id="txtComplemento" prefHeight="160.0" prefWidth="285.0" promptText="Complemento" styleClass="TextField" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Text fill="WHITE" layoutX="289.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="304.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <HBox alignment="CENTER" layoutY="550.0" prefHeight="62.0" prefWidth="670.0">
+         <children>
+            <JFXButton onMouseClicked="#btnSalvar" prefHeight="60.0" prefWidth="150.0" styleClass="ButtonNovo" text="Salvar" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagens/Save-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton onMouseClicked="#btnCancelar" prefHeight="60.0" prefWidth="150.0" styleClass="ButtonExcluir" text="Cancelar" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagens/close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="590.0" prefHeight="29.0" prefWidth="90.0">
+         <children>
+            <FontAwesomeIconView fill="#8a88f5" glyphName="MINUS" onMouseClicked="#btnMinus" size="25" styleClass="ButtonMenu">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="RED" glyphName="CLOSE" onMouseClicked="#btnClose" size="25" styleClass="ButtonMenu" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

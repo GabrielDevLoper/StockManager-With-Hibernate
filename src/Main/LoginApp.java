@@ -6,27 +6,32 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Menu extends Application {
-    private Stage stage;
+public class LoginApp extends Application {
+    private static Stage stage;
 
-    public Stage getStage() {
+    public static Stage getStage() {
         return stage;
     }
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
+    public static void setStage(Stage stage) {
+        LoginApp.stage = stage;
     }
+
+  
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/View/Menu.fxml"));
-       
+        Parent root = FXMLLoader.load(getClass().getResource("/View/Login.fxml"));
         Scene scene = new Scene(root);
-        setStage(stage);
+        stage.setResizable(false);
+        this.stage = stage;
         stage.setScene(scene);
         stage.show();
     }
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }

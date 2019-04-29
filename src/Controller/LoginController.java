@@ -1,7 +1,7 @@
 package Controller;
 
-import Main.Menu;
-import Main.Login;
+import Main.MenuApp;
+import Main.LoginApp;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -21,18 +21,18 @@ public class LoginController implements Initializable {
     
     @FXML
     void btnEntrar(MouseEvent event) {
-        Menu menu = new Menu();
+        MenuApp menu = new MenuApp();
         try {
             menu.start(new Stage());
         } catch (Exception ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Login.getStage().close();
+        LoginApp.getStage().close();
     }
 
     @FXML
     void btnSair(MouseEvent event) {
-        Login.getStage().close();
+        LoginApp.getStage().close();
     }
    
     

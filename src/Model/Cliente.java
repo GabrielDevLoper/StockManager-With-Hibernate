@@ -27,6 +27,7 @@ public class Cliente extends Model implements Serializable {
     private String cpf;
     @OneToOne (cascade = CascadeType.ALL)
     private Endereco endereco;
+    
 
     public Cliente() {
     }

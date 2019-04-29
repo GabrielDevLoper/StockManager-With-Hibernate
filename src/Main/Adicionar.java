@@ -1,7 +1,7 @@
 package Main;
 
 
-import DAO.HibernateDAO;
+import GenericDAO.HibernateDAO;
 import Model.Cliente;
 import Model.Endereco;
 import Model.Usuario;
@@ -14,15 +14,15 @@ public class Adicionar {
         
         Endereco end = new Endereco();
         end.setCidade("MACEIO");
-        end.setBairro("SÃO JORGE");
-        end.setRua("JOAO MARIA");
+        end.setBairro("BENEDITO BENTES");
+        end.setRua("GROTA");
         end.setNumero("590");
-        end.setComplemento("RACINE");
+        end.setComplemento("BIU");
         
         Cliente cli = new Cliente();
-        cli.setNome("ANDRE SANTOS");
-        cli.setTelefone("55555");
-        cli.setCpf("66666");
+        cli.setNome("ANA SANTOS");
+        cli.setTelefone("61651");
+        cli.setCpf("6666687978");
         cli.setEndereco(end);
         end.setCliente(cli);
         

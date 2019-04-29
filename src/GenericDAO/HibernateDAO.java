@@ -1,4 +1,4 @@
-package DAO;
+package GenericDAO;
 
 import ConnectionFactory.NewHibernateUtil;
 import org.hibernate.SessionFactory;

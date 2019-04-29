@@ -15,7 +15,6 @@ import javax.persistence.Table;
 @Entity
 @Table
 @SequenceGenerator(name="endereco_seq", sequenceName = "endereco_seq" ,initialValue=1, allocationSize = 1)
-
 public class Endereco extends Model implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "endereco_seq")

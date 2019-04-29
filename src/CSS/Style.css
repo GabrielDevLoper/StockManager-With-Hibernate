@@ -1,5 +1,5 @@
 .ScreenLogin{
-    -fx-background-color: #2A2E37;
+    -fx-background-color: /*#2A2E37*/linear-gradient(to bottom, #ffffff 0%, #ccccff 100%);
 }
 .ButtonLogin{
     -fx-background-color: transparent;
@@ -22,4 +22,33 @@
     -fx-font-size: 13pt;
     -jfx-focus-color: #9635f6;
     -fx-prompt-text-fill: #707477;
+}
+
+.ButtonMenu{
+   -fx-background-color: transparent;
+   -fx-border-width: 50px 0px 0px 50px;
+   -fx-cursor: hand;
+}
+.ButtonMenu:hover{
+   -fx-background-color: #9635f6;
+   -fx-border-width: 50px 0px 0px 50px;
+   -fx-cursor: hand;
+}
+
+.ButtonNovo:hover{
+   -fx-background-color: #4caf50;
+   -fx-border-width: 50px 0px 0px 50px;
+   -fx-cursor: hand;
+}
+
+.ButtonExcluir:hover{
+   -fx-background-color: #ab003c;
+   -fx-border-width: 50px 0px 0px 50px;
+   -fx-cursor: hand;
+}
+
+.ButtonAlterar-Atualizar:hover{
+   -fx-background-color: #1769aa;
+   -fx-border-width: 50px 0px 0px 50px;
+   -fx-cursor: hand;
 }
