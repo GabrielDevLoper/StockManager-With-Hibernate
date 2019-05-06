@@ -1,0 +1,34 @@
+.ScreenMenu{
+    -fx-background-color:#2A2E37;
+}
+
+.Button{
+    -fx-background-color: linear-gradient(to bottom, #b0bec5 0%, #90a4ae 100%);
+    -fx-text-fill: black;
+}
+
+.Button:hover{
+    -fx-background-color:  linear-gradient(to bottom, #0066ff 0%, #6699ff 100%);
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.FontAwesome{
+    -fx-fill: white;
+    
+}
+.FontAwesome:hover{
+    -fx-fill: #ab003c;
+    -fx-cursor:hand;
+}
+
+.hover-border:hover {
+    -fx-border-color: #0fbcf9;
+    -fx-border-width: 0px 0px 0px 10px;
+    -fx-background-color:  linear-gradient(to bottom, #bdbdbd 0%, #9e9e9e 100%);
+    -fx-cursor: hand;
+}
+
+.ButtonMenu{
+   -fx-background-color: linear-gradient(to bottom, #0099ff 0%, #99ccff 100%);
+}

@@ -4,49 +4,30 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="471.0" prefWidth="733.0" styleClass="ScreenLogin" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="ScreenLogin" stylesheets="@../CSS/login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
    <children>
-      <Pane layoutX="15.0" layoutY="7.0" prefHeight="389.0" prefWidth="597.0" style="-fx-border-radius: 20;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-         <children>
-            <JFXTextField layoutX="227.0" layoutY="171.0" prefHeight="50.0" prefWidth="250.0" promptText="Usuario" styleClass="TextField" />
-            <JFXPasswordField layoutX="227.0" layoutY="221.0" prefHeight="50.0" prefWidth="250.0" promptText="Senha" styleClass="TextField" />
-            <JFXButton layoutX="227.0" layoutY="305.0" onMouseClicked="#btnEntrar" prefHeight="50.0" prefWidth="100.0" styleClass="ButtonLogin-Entrar" text="Entrar" textFill="WHITE">
-               <font>
-                  <Font name="QuicksandBold-Regular" size="20.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </JFXButton>
-            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="206.0" layoutY="202.0" size="20" />
-            <FontAwesomeIconView fill="WHITE" glyphName="LOCK" layoutX="207.0" layoutY="252.0" size="20" />
-            <JFXButton layoutX="377.0" layoutY="305.0" onMouseClicked="#btnSair" prefHeight="50.0" prefWidth="100.0" styleClass="ButtonLogin-Sair" text="Sair" textFill="WHITE">
-               <font>
-                  <Font name="QuicksandBold-Regular" size="20.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </JFXButton>
-            <Text fill="WHITE" layoutX="222.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ManagerStock">
-               <font>
-                  <Font size="41.0" />
-               </font>
-               <effect>
-                  <DropShadow color="#9635f6" />
-               </effect>
-            </Text>
-         </children>
-         <effect>
-            <DropShadow />
-         </effect>
-      </Pane>
+      <JFXTextField fx:id="txtUsuario" layoutX="173.0" layoutY="149.0" prefHeight="38.0" prefWidth="284.0" promptText="Usuario" styleClass="TextField" />
+      <JFXPasswordField fx:id="txtSenha" layoutX="173.0" layoutY="213.0" prefHeight="38.0" prefWidth="284.0" promptText="Senha" styleClass="TextField" />
+      <JFXButton layoutX="178.0" layoutY="331.0" onMouseClicked="#btnEntrar" prefHeight="40.0" prefWidth="100.0" styleClass="ButtonEntrar" text="Entrar">
+         <font>
+            <Font name="QuicksandBold-Regular" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="353.0" layoutY="331.0" onMouseClicked="#btnSair" prefHeight="40.0" prefWidth="100.0" styleClass="ButtonSair" text="Sair">
+         <font>
+            <Font name="QuicksandBold-Regular" size="15.0" />
+         </font>
+      </JFXButton>
+      <FontAwesomeIconView fill="#3428da" glyphName="USER" layoutX="143.0" layoutY="179.0" size="25" styleClass="FontAwesome" />
+      <FontAwesomeIconView fill="#3428da" glyphName="KEY" layoutX="143.0" layoutY="243.0" size="25" styleClass="FontAwesome" />
+      <Text layoutX="181.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="FontAwesome" text="Tela de Acesso" wrappingWidth="268.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

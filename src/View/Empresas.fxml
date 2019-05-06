@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" styleClass="ScreenClientes" stylesheets="@../CSS/clientes.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ClientesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" styleClass="ScreenClientes" stylesheets="@../CSS/clientes.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EmpresaController">
    <top>
       <HBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
          <children>
@@ -22,14 +22,14 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" />
                      </graphic>
                   </Button>
-                  <TextField fx:id="txtBuscarCliente" prefHeight="42.0" prefWidth="325.0" promptText="Buscar Cliente..." style="-fx-background-radius: 20;" />
+                  <TextField fx:id="txtBuscarEmpresa" prefHeight="42.0" prefWidth="325.0" promptText="Buscar Empresa..." style="-fx-background-radius: 20;" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                <children>
                   <JFXButton onMouseClicked="#btnNovo" prefHeight="60.0" prefWidth="120.0" styleClass="ButtonSave" text="Novo">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </JFXButton>
                </children>
@@ -38,7 +38,7 @@
                <children>
                   <JFXButton onMouseClicked="#btnAlterar" prefHeight="60.0" prefWidth="120.0" styleClass="ButtonSave" text="Alterar">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </JFXButton>
                </children>
@@ -47,7 +47,7 @@
                <children>
                   <JFXButton onMouseClicked="#btnExcluir" prefHeight="60.0" prefWidth="120.0" styleClass="ButtonCancel" text="Excluir">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </JFXButton>
                </children>
@@ -60,7 +60,7 @@
          <children>
             <JFXButton onMouseClicked="#btnAtualizar" prefHeight="60.0" prefWidth="120.0" styleClass="ButtonSave" text="Atualizar">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </JFXButton>
          </children>
@@ -73,11 +73,11 @@
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
    </right>
    <center>
-      <TableView fx:id="tblClientes" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+      <TableView fx:id="tblEmpresas" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="clnNome" prefWidth="75.0" text="NOME" />
           <TableColumn fx:id="clnTelefone" prefWidth="75.0" text="TELEFONE" />
-            <TableColumn fx:id="clnCpf" prefWidth="75.0" text="CPF" />
+            <TableColumn fx:id="clnCnpj" prefWidth="75.0" text="CNPJ" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

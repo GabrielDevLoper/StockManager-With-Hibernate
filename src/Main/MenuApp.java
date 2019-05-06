@@ -1,21 +1,16 @@
 package Main;
 
+import Controller.MenuController;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+
 
 public class MenuApp extends Application {
     private static Stage stage;
     
-    
-    private double  xOffset;
-    private double yOffset;
-
     public static Stage getStage() {
         return stage;
     }
@@ -24,6 +19,21 @@ public class MenuApp extends Application {
         MenuApp.stage = stage;
     }
 
+    private String user;
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+    
+    
+    public MenuApp(String usuario) {
+        MenuController.setUsuario2(usuario);
+    }
+    
     
     
     @Override
@@ -32,23 +42,9 @@ public class MenuApp extends Application {
        
         Scene scene = new Scene(root);
         this.stage = stage;
-        stage.initStyle(StageStyle.TRANSPARENT);
+        //stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
-        
-        root.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                xOffset = event.getSceneX();
-                yOffset = event.getSceneY();
-            }
-        });
-            root.setOnMouseDragged(new EventHandler<MouseEvent>(){
-            @Override
-            public void handle(MouseEvent event) {
-                stage.setX(event.getScreenX() - xOffset);
-                stage.setY(event.getScreenY() - yOffset);
-            }
-        });
+        //stage.setFullScreen(true); faz com que o stage se inicie com a tela cheia
         stage.show();
     }
 

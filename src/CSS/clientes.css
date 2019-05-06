@@ -1,0 +1,41 @@
+.ScreenClientes{
+    -fx-background-color: #2A2E37;
+}
+
+.ButtonSave{
+    -fx-background-color: #00A2D3;
+    -fx-background-radius: 100px;
+    -fx-border-radius: 20;
+    -fx-text-fill: white;
+    
+}
+
+.ButtonSave:hover{
+     -fx-background-color: linear-gradient(to bottom, #0066ff 0%, #6699ff 100%);
+     -fx-text-fill: white;
+     -fx-cursor: hand;
+}
+
+
+
+.ButtonCancel{
+    -fx-background-color: #ab003c;
+    -fx-background-radius: 100px;
+    -fx-text-fill: white;
+}
+.ButtonCancel:hover{
+     -fx-background-color: linear-gradient(to bottom, #ab003c 0%, #ff1744 100%);
+     -fx-text-fill: white;
+     
+     -fx-cursor: hand;
+}
+
+.FontAwesome{
+    -fx-fill: #ab003c;
+    -fx-cursor: hand;
+}
+
+
+
+
+ 

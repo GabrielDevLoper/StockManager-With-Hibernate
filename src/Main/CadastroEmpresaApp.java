@@ -9,7 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class CadastroClienteApp extends Application {
+public class CadastroEmpresaApp extends Application {
     private static Stage stage;
     
     private double xOffset;
@@ -20,12 +20,12 @@ public class CadastroClienteApp extends Application {
     }
 
     public static void setStage(Stage stage) {
-        CadastroClienteApp.stage = stage;
+        CadastroEmpresaApp.stage = stage;
     }
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/View/CadastroClientes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/View/CadastroEmpresa.fxml"));
        
         Scene scene = new Scene(root);
         this.stage = stage;

@@ -1,0 +1,26 @@
+.ScreenLogin{
+    -fx-background-color: #2A2E37;
+}
+
+.TextField{
+    -fx-text-fill: #00A2D3;
+    -fx-font-size: 13pt;
+    -jfx-focus-color: linear-gradient(to bottom, #0066ff 0%, #6699ff 100%);
+    -fx-prompt-text-fill: #707477;
+}
+
+.ButtonEntrar{
+    -fx-background-color: #00A2D3;
+    -fx-background-radius: 100px;
+    -fx-text-fill: white;
+}
+
+.ButtonSair{
+    -fx-background-color: #ab003c;
+    -fx-background-radius: 100px;
+    -fx-text-fill: white;
+}
+
+.FontAwesome{
+    -fx-fill: #00A2D3;
+}

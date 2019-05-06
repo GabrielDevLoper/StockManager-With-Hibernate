@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="297.0" prefWidth="723.0" styleClass="ScreenClientes" stylesheets="@../CSS/clientes.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CadastroEmpresaController">
+   <children>
+      <HBox alignment="CENTER" layoutX="205.0" layoutY="210.0" prefHeight="70.0" prefWidth="313.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="205.0">
+         <children>
+            <JFXButton onMouseClicked="#btnSalvar" prefHeight="40.0" prefWidth="108.0" styleClass="ButtonSave" text="Salvar">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="CHECK_SQUARE_ALT" size="20" />
+               </graphic>
+            </JFXButton>
+            <JFXButton onMouseClicked="#btnCancelar" prefHeight="40.0" prefWidth="108.0" styleClass="ButtonCancel" text="Cancelar">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="CLOSE" size="20" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="283.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="430.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Empresa:" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNome" layoutX="14.0" layoutY="40.0" prefHeight="25.0" prefWidth="234.0" />
+            <Label layoutX="14.0" layoutY="65.0" text="Telefone:" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTelefone" layoutX="14.0" layoutY="91.0" onKeyReleased="#FormatedTel" prefHeight="25.0" prefWidth="234.0" />
+            <Label layoutX="14.0" layoutY="118.0" text="CNPJ:" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCnpj" layoutX="14.0" layoutY="144.0" onKeyReleased="#FormatedCnpj" prefHeight="25.0" prefWidth="234.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="293.0" layoutY="13.0" prefHeight="200.0" prefWidth="424.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label layoutY="14.0" text="Endereço:" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtEndereco" layoutY="40.0" prefHeight="25.0" prefWidth="234.0" />
+            <Label layoutX="246.0" layoutY="15.0" text="Nº:" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNumero" layoutX="246.0" layoutY="41.0" prefHeight="25.0" prefWidth="50.0" />
+            <Label layoutY="66.0" text="Bairro:" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtBairro" layoutY="92.0" prefHeight="25.0" prefWidth="234.0" />
+            <Label layoutX="246.0" layoutY="67.0" text="CEP:" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCep" layoutX="246.0" layoutY="93.0" onKeyPressed="#FormatedCep" prefHeight="25.0" prefWidth="118.0" />
+            <Label layoutY="118.0" text="Cidade:" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCidade" layoutY="144.0" prefHeight="25.0" prefWidth="133.0" />
+            <Label layoutX="246.0" layoutY="119.0" text="Complemento:" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtComplemento" layoutX="246.0" layoutY="145.0" prefHeight="25.0" prefWidth="177.0" />
+            <Label layoutX="171.0" layoutY="118.0" text="UF:" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUf" layoutX="171.0" layoutY="144.0" prefHeight="25.0" prefWidth="48.0" />
+            <FontAwesomeIconView glyphName="TRASH" layoutX="370.0" layoutY="110.0" onMouseClicked="#btnClearCEP" styleClass="FontAwesome" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

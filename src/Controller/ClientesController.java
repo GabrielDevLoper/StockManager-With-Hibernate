@@ -1,11 +1,11 @@
 package Controller;
 
 import GenericDAO.HibernateDAO;
+import Main.AlteraClienteApp;
+
 import Main.CadastroClienteApp;
-import Main.MenuApp;
 
 import Model.Cliente;
-import Main.ClienteApp;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -16,14 +16,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class ClientesController implements Initializable {
+    
+    private ObservableList<Cliente> clientes = FXCollections.observableArrayList();
+    private Cliente selecionadoCliente;
+    
     
     @FXML
     private TableView<Cliente> tblClientes;
@@ -33,16 +39,22 @@ public class ClientesController implements Initializable {
     private TableColumn<Cliente, String> clnTelefone;
     @FXML
     private TableColumn<Cliente, String> clnCpf;
-   
     
-     @FXML
-    void btnAlterar(MouseEvent event) {
-
+    @FXML
+    private TextField txtBuscarCliente;
+    
+    
+    
+    
+    
+    @FXML
+    void btnBuscar(MouseEvent event) {
+        tblClientes.setItems(BuscarCliente());
     }
+
 
     @FXML
     void btnNovo(MouseEvent event) {
-        
         CadastroClienteApp cc = new CadastroClienteApp();
         try {
             cc.start(new Stage());
@@ -52,27 +64,12 @@ public class ClientesController implements Initializable {
     }
     
     @FXML
-    void btnExcluir(MouseEvent event) {
-
-    }
-    
-    @FXML
     void btnAtualizar(MouseEvent event) {
-
+        initTable();
     }
-    
-     @FXML
-    void btnFechar(MouseEvent event) {
-        ClienteApp.getStage().close();
-        MenuApp menu = new MenuApp();
-        try {
-            menu.start(new Stage());
-        } catch (Exception ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-      @FXML
+   
+    /*Comando abaixo é usado para criar botões de fechar e minimizar automatico
+    @FXML
     void btnMaximize(MouseEvent event) {
          Stage s = (Stage)((Node)event.getSource()).getScene().getWindow();
          s.setFullScreen(true);
@@ -83,11 +80,10 @@ public class ClientesController implements Initializable {
         Stage s = (Stage)((Node)event.getSource()).getScene().getWindow();
         s.setIconified(true);
     }
+   */
     
     
     
-    private ObservableList<Cliente> clientes = FXCollections.observableArrayList();
-    private Cliente selecionadoCliente;
     
     
     @Override
@@ -100,13 +96,58 @@ public class ClientesController implements Initializable {
                selecionadoCliente = (Cliente) newValue;
            }
         });
-        
-        
    }
+    
+    
+    @FXML
+    void btnAlterar(MouseEvent event) {
+        
+        if(selecionadoCliente!= null){
+            AlteraClienteApp acp = new AlteraClienteApp(selecionadoCliente);
+            try {
+                acp.start(new Stage());
+            } catch (Exception ex) {
+                Logger.getLogger(ClientesController.class.getName()).log(Level.SEVERE, null, ex);
+            }   
+            
+        }else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Selecione um Cliente");
+            alert.setTitle("Cliente");
+            alert.setContentText("Aperte OK Para continuar");
+            alert.show();
+            
+        }
+    }
+    
+    @FXML
+    void btnExcluir(MouseEvent event) {
+        if(selecionadoCliente != null){
+            HibernateDAO dao = new HibernateDAO();
+            dao.delete(selecionadoCliente);
+        
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Excluido Com Sucesso");
+            alert.setTitle("Excluido");
+            alert.setContentText("Aperte OK Para continuar");
+            alert.show();
+            
+            initTable();
+            
+        }else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Selecione um Cliente");
+            alert.setTitle("Cliente");
+            alert.setContentText("Aperte OK Para continuar");
+            alert.show();
+        }
+        
+    }
+    
     
     private void initTable(){
         
-        //PASSAR AS STRINGS DA MESMA FORMA QUE FOI ESCRITA NA CLASSE.
+            //PASSAR AS STRINGS DA MESMA FORMA QUE FOI ESCRITA NA CLASSE.
             clnNome.setCellValueFactory(new PropertyValueFactory("nome"));
             clnTelefone.setCellValueFactory(new PropertyValueFactory("telefone"));
             clnCpf.setCellValueFactory(new PropertyValueFactory("cpf"));
@@ -120,6 +161,20 @@ public class ClientesController implements Initializable {
         
     }
     
+    
+    public ObservableList<Cliente> BuscarCliente(){
+        ObservableList<Cliente> clienteBuscar = FXCollections.observableArrayList();
+        for(int x = 0; x<clientes.size(); x++){
+            if(clientes.get(x).getNome().contains(txtBuscarCliente.getText().toUpperCase())){
+                clienteBuscar.add(clientes.get(x));
+            
+            }else if(clientes.get(x).getCpf().contains(txtBuscarCliente.getText().toUpperCase())){
+                 clienteBuscar.add(clientes.get(x));
+            }
+        }
+        return clienteBuscar;
+    }
+   
    
     
 }

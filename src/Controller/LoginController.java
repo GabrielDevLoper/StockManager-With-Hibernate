@@ -2,6 +2,8 @@ package Controller;
 
 import Main.MenuApp;
 import Main.LoginApp;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -19,9 +21,17 @@ public class LoginController implements Initializable {
     @FXML
     private URL location;
     
+    
+    @FXML
+    private JFXTextField txtUsuario;
+
+    @FXML
+    private JFXPasswordField txtSenha;
+    
+    
     @FXML
     void btnEntrar(MouseEvent event) {
-        MenuApp menu = new MenuApp();
+        MenuApp menu = new MenuApp(txtUsuario.getText());
         try {
             menu.start(new Stage());
         } catch (Exception ex) {
@@ -34,7 +44,6 @@ public class LoginController implements Initializable {
     void btnSair(MouseEvent event) {
         LoginApp.getStage().close();
     }
-   
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
