@@ -16,14 +16,10 @@ public class NewHibernateUtil {
     }
     
     public Session openSession(){
-        
         return connection.openSession();
-        
     }
     
     public void closeSession(){
         connection.close();
     }
-    
-    
 }
