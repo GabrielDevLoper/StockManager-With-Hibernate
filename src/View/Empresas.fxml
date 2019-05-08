@@ -52,6 +52,15 @@
                   </JFXButton>
                </children>
             </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXButton onMouseClicked="#btnVisualizar" prefHeight="60.0" prefWidth="120.0" styleClass="ButtonSave" text="Visualizar">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
          </children>
       </HBox>
    </top>

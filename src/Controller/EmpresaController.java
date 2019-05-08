@@ -1,7 +1,9 @@
 package Controller;
 
 import GenericDAO.HibernateDAO;
+import Main.AlteraEmpresaApp;
 import Main.CadastroEmpresaApp;
+import Main.VisualizarEmpresaApp;
 import Model.Cliente;
 import Model.Empresa;
 import java.net.URL;
@@ -14,6 +16,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -31,21 +34,56 @@ public class EmpresaController implements Initializable {
     @FXML private TableColumn<Empresa, String> clnTelefone;
     @FXML private TableColumn<Empresa, String> clnCnpj;
     
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        initTable();
+        
+           tblEmpresas.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+           @Override
+           public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+               empresaSelecionada = (Empresa) newValue;
+           }
+        });
+    }    
     
+    @FXML
+    void btnExcluir(MouseEvent event) {
+        HibernateDAO dao = new HibernateDAO();
+        if(empresaSelecionada != null){
+            dao.delete(empresaSelecionada);    
+        }else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Selecione uma Empresa");
+            alert.setTitle("Empresa");
+            alert.setContentText("Aperte OK Para continuar");
+            alert.show();
+        }
+        
+    }
     
     @FXML
     void btnAlterar(MouseEvent event) {
-
+        if(empresaSelecionada != null){
+            AlteraEmpresaApp aep = new AlteraEmpresaApp(empresaSelecionada);
+            try {
+            aep.start(new Stage());
+            } catch (Exception ex) {
+            Logger.getLogger(EmpresaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Selecione uma Empresa");
+            alert.setTitle("Empresa");
+            alert.setContentText("Aperte OK Para continuar");
+            alert.show();
+        }
+        
     }
-
+    
     @FXML
     void btnAtualizar(MouseEvent event) {
-
-    }
-
-    @FXML
-    void btnExcluir(MouseEvent event) {
-
+         initTable();
     }
 
     @FXML
@@ -56,41 +94,19 @@ public class EmpresaController implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(EmpresaController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    @FXML
+    void btnVisualizar(MouseEvent event) {
+        VisualizarEmpresaApp viewEmp = new VisualizarEmpresaApp(empresaSelecionada);
+        try {
+            viewEmp.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(EmpresaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        initTable();
-        
-        
-           tblEmpresas.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
-           @Override
-           public void changed(ObservableValue observable, Object oldValue, Object newValue) {
-               empresaSelecionada = (Empresa) newValue;
-           }
-        });
-        
-        
-    }    
-    
-    
-    
-    
-    
+    }
     
     private void initTable(){
         

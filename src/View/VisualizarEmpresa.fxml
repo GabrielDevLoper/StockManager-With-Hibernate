@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="670.0" styleClass="ScreenLogin" stylesheets="@../CSS/login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VisualizarEmpresaController">
+   <children>
+      <Text fill="WHITE" layoutX="219.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados Da Empresa">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="273.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Label fx:id="txtNome" layoutX="166.0" layoutY="69.0" prefHeight="33.0" prefWidth="345.0" textFill="#3d8ce0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtTelefone" layoutX="166.0" layoutY="102.0" prefHeight="33.0" prefWidth="345.0" textFill="#3d8ce0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtCnpj" layoutX="166.0" layoutY="135.0" prefHeight="33.0" prefWidth="345.0" textFill="#3d8ce0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtEndereco" layoutX="144.0" layoutY="287.0" prefHeight="33.0" prefWidth="345.0" text="TESTE" textFill="#3d8ce0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtBairro" layoutX="144.0" layoutY="319.0" prefHeight="33.0" prefWidth="345.0" text="TESTE" textFill="#3d8ce0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtCidade" layoutX="144.0" layoutY="352.0" prefHeight="33.0" prefWidth="174.0" text="TESTE" textFill="#3d8ce0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtUf" layoutX="526.0" layoutY="347.0" prefHeight="33.0" prefWidth="123.0" text="TESTE" textFill="#3d8ce0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtComplemento" alignment="TOP_LEFT" layoutX="44.0" layoutY="430.0" prefHeight="104.0" prefWidth="626.0" text="TESTE" textFill="#3d8ce0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtNumero" layoutX="529.0" layoutY="287.0" prefHeight="33.0" prefWidth="123.0" text="TESTE" textFill="#3d8ce0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtCep" layoutX="533.0" layoutY="319.0" prefHeight="33.0" prefWidth="123.0" text="TESTE" textFill="#3d8ce0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtNome1" layoutX="51.0" layoutY="69.0" prefHeight="33.0" prefWidth="115.0" text="Empresa:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtNome11" layoutX="51.0" layoutY="102.0" prefHeight="33.0" prefWidth="115.0" text="Telefone:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtNome111" layoutX="51.0" layoutY="135.0" prefHeight="33.0" prefWidth="115.0" text="CNPJ:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="496.0" layoutY="288.0" prefHeight="30.0" prefWidth="30.0" text="N°:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="489.0" layoutY="318.0" prefHeight="30.0" prefWidth="44.0" text="CEP:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="288.0" text="Endereço:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="321.0" text="Bairro:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="354.0" text="Cidade:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="489.0" layoutY="348.0" prefHeight="30.0" prefWidth="44.0" text="UF:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="400.0" text="Complemento:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
