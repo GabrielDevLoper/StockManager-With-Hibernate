@@ -29,7 +29,7 @@
                <children>
                   <JFXButton onMouseClicked="#btnNovo" prefHeight="60.0" prefWidth="120.0" styleClass="ButtonSave" text="Novo">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font size="18.0" />
                      </font>
                   </JFXButton>
                </children>
@@ -38,7 +38,7 @@
                <children>
                   <JFXButton onMouseClicked="#btnAlterar" prefHeight="60.0" prefWidth="120.0" styleClass="ButtonSave" text="Alterar">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font size="18.0" />
                      </font>
                   </JFXButton>
                </children>
@@ -47,7 +47,7 @@
                <children>
                   <JFXButton onMouseClicked="#btnExcluir" prefHeight="60.0" prefWidth="120.0" styleClass="ButtonCancel" text="Excluir">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font size="18.0" />
                      </font>
                   </JFXButton>
                </children>
@@ -56,7 +56,7 @@
                <children>
                   <JFXButton onMouseClicked="#btnVisualizar" prefHeight="60.0" prefWidth="120.0" styleClass="ButtonSave" text="Visualizar">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font size="18.0" />
                      </font>
                   </JFXButton>
                </children>
@@ -69,7 +69,7 @@
          <children>
             <JFXButton onMouseClicked="#btnAtualizar" prefHeight="60.0" prefWidth="120.0" styleClass="ButtonSave" text="Atualizar">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font size="18.0" />
                </font>
             </JFXButton>
          </children>

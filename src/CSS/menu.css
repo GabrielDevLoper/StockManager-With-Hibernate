@@ -25,10 +25,13 @@
 .hover-border:hover {
     -fx-border-color: #0fbcf9;
     -fx-border-width: 0px 0px 0px 10px;
-    -fx-background-color:  linear-gradient(to bottom, #bdbdbd 0%, #9e9e9e 100%);
+    -fx-background-color:  linear-gradient(to bottom, #ab003c 0%, #ff1744 100%);
     -fx-cursor: hand;
+   font-size: 25px;
+    
 }
 
 .ButtonMenu{
    -fx-background-color: linear-gradient(to bottom, #0099ff 0%, #99ccff 100%);
+   
 }

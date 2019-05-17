@@ -40,11 +40,7 @@ public class ClientesController implements Initializable {
     @FXML
     private TableColumn<Cliente, String> clnCpf;
     
-    @FXML
-    private TextField txtBuscarCliente;
-    
-    
-    
+    @FXML private TextField txtBuscarCliente;
     
     
     @FXML
@@ -66,6 +62,11 @@ public class ClientesController implements Initializable {
     @FXML
     void btnAtualizar(MouseEvent event) {
         initTable();
+    }
+    
+    @FXML
+    void btnVisualizar(MouseEvent event) {
+
     }
    
     /*Comando abaixo é usado para criar botões de fechar e minimizar automatico

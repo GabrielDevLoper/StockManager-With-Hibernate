@@ -110,7 +110,7 @@ public class EmpresaController implements Initializable {
     
     private void initTable(){
         
-            //PASSAR AS STRINGS DA MESMA FORMA QUE FOI ESCRITA NA CLASSE.
+            //PASSAR AS STRINGS DA MESMA FORMA QUE FOI ESCRITA NA CLASSE OU NA IDENTIDADE.
             clnNome.setCellValueFactory(new PropertyValueFactory("nome"));
             clnTelefone.setCellValueFactory(new PropertyValueFactory("telefone"));
             clnCnpj.setCellValueFactory(new PropertyValueFactory("cnpj"));

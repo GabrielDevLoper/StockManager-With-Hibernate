@@ -2,6 +2,7 @@ package Controller;
 
 import FormatedTxtField.FormatedTextField;
 import GenericDAO.HibernateDAO;
+import Main.CadastroClienteApp;
 import Model.Cliente;
 import Model.Endereco;
 import java.net.URL;
@@ -35,7 +36,7 @@ public class CadastroClienteController implements Initializable {
 
     @FXML
     void btnCancelar(MouseEvent event) {
-
+        CadastroClienteApp.getStage().close();
     }
     @FXML
     void btnSalvar(MouseEvent event) {
