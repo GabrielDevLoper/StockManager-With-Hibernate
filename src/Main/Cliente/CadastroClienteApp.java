@@ -1,4 +1,4 @@
-package Main;
+package Main.Cliente;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -7,9 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-public class CadastroEmpresaApp extends Application {
+public class CadastroClienteApp extends Application {
     private static Stage stage;
     
     private double xOffset;
@@ -20,12 +19,12 @@ public class CadastroEmpresaApp extends Application {
     }
 
     public static void setStage(Stage stage) {
-        CadastroEmpresaApp.stage = stage;
+        CadastroClienteApp.stage = stage;
     }
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/View/CadastroEmpresa.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/View/Cliente/CadastroClientes.fxml"));
        
         Scene scene = new Scene(root);
         this.stage = stage;

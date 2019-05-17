@@ -1,9 +1,5 @@
-package Main;
+package Main.Cliente;
 
-import Controller.AlteraClienteController;
-import Controller.AlteraEmpresaController;
-import Model.Cliente;
-import Model.Empresa;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -11,32 +7,32 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
-
-public class AlteraEmpresaApp extends Application {
+public class ClienteApp extends Application {
     private static Stage stage;
     
-    public AlteraEmpresaApp(Empresa em1){
-        AlteraEmpresaController.setEm2(em1);
-    }
-    
+    private double xOffset;
+    private double yOffset;
+
     public static Stage getStage() {
         return stage;
     }
 
     public static void setStage(Stage stage) {
-        AlteraEmpresaApp.stage = stage;
+        ClienteApp.stage = stage;
     }
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/View/AlteraEmpresas.fxml"));
+        
+        
+        
+        Parent root = FXMLLoader.load(getClass().getResource("/View/Cliente/Clientes.fxml"));
        
         Scene scene = new Scene(root);
         this.stage = stage;
-        //stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
-        stage.setResizable(false);
         stage.show();
     }
 

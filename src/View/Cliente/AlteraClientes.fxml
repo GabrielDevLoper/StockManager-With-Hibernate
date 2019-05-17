@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="297.0" prefWidth="723.0" styleClass="ScreenClientes" stylesheets="@../CSS/clientes.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AlteraClienteController">
+<AnchorPane id="AnchorPane" prefHeight="297.0" prefWidth="723.0" styleClass="ScreenClientes" stylesheets="@../../CSS/clientes.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Cliente.AlteraClienteController">
    <children>
       <HBox alignment="CENTER" layoutX="205.0" layoutY="223.0" prefHeight="70.0" prefWidth="313.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="205.0">
          <children>

@@ -1,7 +1,6 @@
-package Main;
+package Main.Empresa;
 
-import Controller.MenuController;
-import Controller.VisualizarEmpresaController;
+import Controller.Empresa.VisualizarEmpresaController;
 import Model.Empresa;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -33,7 +32,7 @@ public class VisualizarEmpresaApp extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/View/VisualizarEmpresa.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/View/Empresa/VisualizarEmpresa.fxml"));
        
         Scene scene = new Scene(root);
         this.stage = stage;

@@ -1,9 +1,9 @@
-package Controller;
+package Controller.Empresa;
 
 import GenericDAO.HibernateDAO;
-import Main.AlteraEmpresaApp;
-import Main.CadastroEmpresaApp;
-import Main.VisualizarEmpresaApp;
+import Main.Empresa.AlteraEmpresaApp;
+import Main.Empresa.CadastroEmpresaApp;
+import Main.Empresa.VisualizarEmpresaApp;
 import Model.Cliente;
 import Model.Empresa;
 import java.net.URL;

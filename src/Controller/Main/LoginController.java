@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Main;
 
 import Main.MenuApp;
 import Main.LoginApp;

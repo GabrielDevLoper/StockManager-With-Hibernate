@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Empresa;
 
 import Model.Empresa;
 import java.net.URL;

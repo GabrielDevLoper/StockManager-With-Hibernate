@@ -1,8 +1,8 @@
-package Controller;
+package Controller.Empresa;
 
 import FormatedTxtField.FormatedTextField;
 import GenericDAO.HibernateDAO;
-import Model.Cliente;
+import Main.Empresa.AlteraEmpresaApp;
 import Model.Empresa;
 import Model.Endereco;
 import java.net.URL;
@@ -10,18 +10,25 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 
-public class CadastroEmpresaController implements Initializable {
+public class AlteraEmpresaController implements Initializable {
     
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private URL location;
+    
+    @FXML
+    private Label lblID;
+    @FXML
+    private Label lblIDend;
+
     
     @FXML private TextField txtNome;
     @FXML private TextField txtTelefone;
@@ -33,16 +40,24 @@ public class CadastroEmpresaController implements Initializable {
     @FXML private TextField txtCidade;
     @FXML private TextField txtComplemento;
     @FXML private TextField txtUf;
+    
+    private static Empresa em2;
 
-    @FXML
-    void btnCancelar(MouseEvent event) {
-
+    public static Empresa getEm2() {
+        return em2;
     }
+
+    public static void setEm2(Empresa em2) {
+        AlteraEmpresaController.em2 = em2;
+    }
+    
+    
     @FXML
-    void btnSalvar(MouseEvent event) {
+    void btnAlterar(MouseEvent event) {
         HibernateDAO cdao = new HibernateDAO();
         Endereco end = new Endereco();
         
+        end.setId(Integer.parseInt(lblIDend.getText()));
         end.setCidade(txtCidade.getText().toUpperCase().trim());
         end.setBairro(txtBairro.getText().toUpperCase().trim());
         end.setEndereco(txtEndereco.getText().toUpperCase().trim());
@@ -52,23 +67,53 @@ public class CadastroEmpresaController implements Initializable {
         end.setComplemento(txtComplemento.getText().toUpperCase().trim());
         
         Empresa emp = new Empresa();
+        emp.setId(Integer.parseInt(lblID.getText()));
         emp.setNome(txtNome.getText().toUpperCase().trim());
         emp.setTelefone(txtTelefone.getText().toUpperCase().trim());
         emp.setCnpj(txtCnpj.getText().trim());
         emp.setEndereco(end);
         end.setEmpresa(emp);
         
-        cdao.add(emp);
+        cdao.update(emp);
         
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setHeaderText("Salvo Com Sucesso");
-                alert.setTitle("Salvo");
+                alert.setHeaderText("Alterado Com Sucesso");
+                alert.setTitle("Alterado");
                 alert.setContentText("Aperte OK Para continuar");
                 alert.show();
-                
-        ClearTextFields();
+        
+        AlteraEmpresaApp.getStage().close();
+        
 
     }
+
+    
+    public void initClient(){
+        lblID.setText(Integer.toString(em2.getId()));
+        txtNome.setText(em2.getNome());
+        txtTelefone.setText(em2.getTelefone());
+        txtCnpj.setText(em2.getCnpj());
+        
+        lblIDend.setText(Integer.toString(em2.getEndereco().getId()));
+        txtEndereco.setText(em2.getEndereco().getEndereco());
+        txtNumero.setText(em2.getEndereco().getNumero());
+        txtBairro.setText(em2.getEndereco().getBairro());
+        txtCep.setText(em2.getEndereco().getCep());
+        txtCidade.setText(em2.getEndereco().getCidade());
+        txtComplemento.setText(em2.getEndereco().getComplemento());
+        txtUf.setText(em2.getEndereco().getUf());
+    }
+    
+    
+    
+
+    @FXML
+    void btnCancelar(MouseEvent event) {
+
+    }
+    
+    
+    
     
     @FXML
     void FormatedCep(KeyEvent event) {
@@ -78,16 +123,20 @@ public class CadastroEmpresaController implements Initializable {
         tff.setTf(txtCep);
         tff.formatter();
     }
-   
-
+    
+    
     @FXML
     void FormatedCnpj(KeyEvent event) {
         FormatedTextField tff = new FormatedTextField();
-        tff.setMask("###.###.###-##");
+        tff.setMask("##.###.###/####-##");
         tff.setCaracteresValidos("0123456789");
         tff.setTf(txtCnpj);
         tff.formatter();
+        
     }
+
+
+   
 
     @FXML
     void FormatedTel(KeyEvent event) {
@@ -98,15 +147,19 @@ public class CadastroEmpresaController implements Initializable {
         tff.formatter();
 
     }
+
+    
     
     @FXML
     void btnClearCEP(MouseEvent event) {
-         txtCep.setText("");
+        txtCep.setText("");
+       
     }
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        initClient();
     } 
     
     public void ClearTextFields(){

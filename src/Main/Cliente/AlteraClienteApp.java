@@ -1,13 +1,11 @@
-package Main;
+package Main.Cliente;
 
-import Controller.AlteraClienteController;
+import Controller.Cliente.AlteraClienteController;
 import Model.Cliente;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 
@@ -28,7 +26,7 @@ public class AlteraClienteApp extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/View/AlteraClientes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/View/Cliente/AlteraClientes.fxml"));
        
         Scene scene = new Scene(root);
         this.stage = stage;

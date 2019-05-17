@@ -1,9 +1,9 @@
-package Controller;
+package Controller.Cliente;
 
 import GenericDAO.HibernateDAO;
-import Main.AlteraClienteApp;
+import Main.Cliente.AlteraClienteApp;
 
-import Main.CadastroClienteApp;
+import Main.Cliente.CadastroClienteApp;
 
 import Model.Cliente;
 import java.net.URL;
@@ -17,7 +17,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;

@@ -22,12 +22,19 @@
     -fx-cursor:hand;
 }
 
+
+.hover-border{
+    
+    
+}
+
+
 .hover-border:hover {
     -fx-border-color: #0fbcf9;
     -fx-border-width: 0px 0px 0px 10px;
     -fx-background-color:  linear-gradient(to bottom, #ab003c 0%, #ff1744 100%);
     -fx-cursor: hand;
-   font-size: 25px;
+    -fx-font-size: 25px;
     
 }
 

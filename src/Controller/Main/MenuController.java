@@ -1,7 +1,7 @@
-package Controller;
+package Controller.Main;
 
-import Main.ClienteApp;
-import Main.EmpresaApp;
+import Main.Cliente.ClienteApp;
+import Main.Empresa.EmpresaApp;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
